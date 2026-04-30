@@ -1,0 +1,41 @@
+-- return {
+--   "nvim-neo-tree/neo-tree.nvim",
+--   opts = {
+--     -- window = {
+--     --   popup_strategy = "float", -- helps keep state consistent
+--     -- },
+--     window = {
+--       mappings = {
+--         -- Map "C" to change the global working directory (CWD) to the selected node
+--         ["C"] = function(state)
+--           local node = state.tree:get_node()
+--           if node.type == "directory" then
+--             vim.api.nvim_set_current_dir(node.path)
+--             print("CWD set to: " .. node.path)
+--           end
+--         end,
+--       },
+--     },
+--     filesystem = {
+--       filtered_items = {
+--         visible = true, -- This makes hidden files visible
+--         hide_dotfiles = false,
+--         hide_gitignored = false,
+--         hide_by_name = {
+--           -- ".DS_Store",
+--           -- "thumbs.db",
+--         },
+--       },
+--     },
+--     -- event_handlers = {
+--     --   {
+--     --     event = "neo_tree_window_after_open",
+--     --     handler = function(args)
+--     --       if args.position == "float" then
+--     --         -- Optional: Force focus or specific settings for the float here
+--     --       end
+--     --     end,
+--     --   },
+--     -- },
+--   },
+-- }

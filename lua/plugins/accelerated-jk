@@ -1,0 +1,12 @@
+-- return {
+--   "rainbowhxch/accelerated-jk.nvim",
+--   keys = {
+--     { "j", "<Plug>(accelerated_jk_gj)", mode = "n", desc = "Accelerated j" },
+--     { "k", "<Plug>(accelerated_jk_gk)", mode = "n", desc = "Accelerated k" },
+--   },
+--   opts = {
+--     mode = "time_driven", -- Accelerates based on time between presses
+--     acceleration_limit = 150, -- Threshold in ms to count as a repeat
+--     acceleration_table = { 7, 12, 17, 21, 24, 26, 28, 30 }, -- Jumps more lines as you hold
+--   },
+-- }

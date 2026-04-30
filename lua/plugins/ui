@@ -1,0 +1,12 @@
+-- r turn {
+--   {
+--     "gen740/SmoothCursor.nvim",
+--     config = function()
+--       require("smoothcursor").setup({
+--         autostart = true,
+--         cursor = "➤", -- This visual icon follows your movement
+--         type = "default", -- "default", "exp", "jump"
+--       })
+--     end,
+--   },
+-- }

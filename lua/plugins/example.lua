@@ -195,3 +195,17 @@ return {
     },
   },
 }
+
+-- disable horizontal scrolling
+--  {
+--   "folke/snacks.nvim",
+--   opts = {
+--     terminal = {
+--       win = {
+--         wo = {
+--           wrap = true, -- Enables wrapping
+--         },
+--       },
+--     },
+--   },
+-- }

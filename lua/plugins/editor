@@ -1,0 +1,11 @@
+-- -- provides a visual tree of every change you've made
+-- return {
+--   {
+--     "jiaoshijie/undotree",
+--     dependencies = "nvim-lua/plenary.nvim",
+--     config = true,
+--     keys = { -- Map it to something familiar
+--       { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>", desc = "Undotree" },
+--     },
+--   },
+-- }

@@ -1,0 +1,19 @@
+-- return {
+--   {
+--     "Pocco81/auto-save.nvim",
+--     opts = {
+--       enabled = true,
+--       -- Trigger on focus lost or buffer switch
+--       events = { "InsertLeave", "TextChanged", "FocusLost" },
+--       conditions = {
+--         exists = true,
+--         filename_is_not = {},
+--         filetype_is_not = { "gitcommit", "telescope" },
+--         -- Ensure we don't save while in a terminal
+--         buftype_is_not = { "terminal" },
+--       },
+--       write_all_buffers = false, -- Only save current buffer
+--       debounce_delay = 135, -- Slight delay to avoid stutter
+--     },
+--   },
+-- }
