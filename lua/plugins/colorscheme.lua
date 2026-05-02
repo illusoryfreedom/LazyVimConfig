@@ -53,6 +53,9 @@ return {
             "StatusLine", -- The statusline itself
             "StatusLineNC", -- Non-current statuslines
             "WinSeparator", -- The thin line between the editor and the bottom
+            "TabLine",
+            "TabLineFill",
+            "TabLineSel",
 
             -- Lualine specific (The "sections" of the bar)
             "lualine_c_normal",
@@ -116,6 +119,20 @@ return {
 
       vim.cmd([[colorscheme dracula]])
       vim.api.nvim_set_hl(0, "MyBannerColor", { fg = "#50fa7b" })
+
+      -- Lualine loads after ColorScheme fires (VeryLazy), so re-clear its highlights once everything is ready
+      vim.api.nvim_create_autocmd("VimEnter", {
+        once = true,
+        callback = function()
+          vim.schedule(function()
+            for hl_name, _ in pairs(vim.api.nvim_get_hl(0, {})) do
+              if hl_name:find("lualine") or hl_name:find("StatusLine") or hl_name:find("MsgArea") then
+                vim.api.nvim_set_hl(0, hl_name, { bg = "NONE", ctermbg = "NONE" })
+              end
+            end
+          end)
+        end,
+      })
     end,
   },
 }
