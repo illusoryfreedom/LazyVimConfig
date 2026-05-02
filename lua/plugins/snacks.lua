@@ -28,7 +28,7 @@ return {
     -- }
     opts.dashboard = opts.dashboard or {}
     opts.dashboard.sections = {
-      { section = "header", hl = "String" }, -- Change "String" to "Keyword" or "Function" for different colors
+      { section = "header", hl = "MyBannerColor" }, -- Change "String" to "Keyword" or "Function" for different colors
       { section = "keys", gap = 1, padding = 1 },
       { section = "startup" },
     }

@@ -108,6 +108,23 @@ return {
           -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#ffffff0A" })
           -- vim.api.nvim_set_hl(0, "Search", { bg = "#ff79c660", fg = "#000000" })
           -- vim.api.nvim_set_hl(0, "Visual", { bg = "#bd93f960" })
+
+          -- Custom dashboard palette — each one is a distinct color for easy identification
+          vim.api.nvim_set_hl(0, "MyDashHeader", { fg = "#707070" }) -- dark grey  (banner text)
+          vim.api.nvim_set_hl(0, "MyDashKey",    { fg = "#f1fa8c" }) -- yellow     (shortcut keys: f, n, r…)
+          vim.api.nvim_set_hl(0, "MyDashDesc",   { fg = "#50fa7b" }) -- green      (item descriptions)
+          vim.api.nvim_set_hl(0, "MyDashIcon",   { fg = "#8b3a2a" }) -- dark brick red w/ earthy green lean (icons)
+          vim.api.nvim_set_hl(0, "MyDashTitle",  { fg = "#8be9fd" }) -- cyan       (section titles)
+          vim.api.nvim_set_hl(0, "MyDashFooter", { fg = "#ffb86c" }) -- orange     (footer / startup time)
+
+          -- Wire snacks groups to our custom palette
+          vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { link = "MyDashHeader" })
+          vim.api.nvim_set_hl(0, "SnacksDashboardKey",    { link = "MyDashKey" })
+          vim.api.nvim_set_hl(0, "SnacksDashboardDesc",   { link = "MyDashDesc" })
+          vim.api.nvim_set_hl(0, "SnacksDashboardIcon",   { link = "MyDashIcon" })
+          vim.api.nvim_set_hl(0, "SnacksDashboardTitle",  { link = "MyDashTitle" })
+          vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { link = "MyDashFooter" })
+          vim.api.nvim_set_hl(0, "MyBannerColor", { link = "MyDashHeader" })
         end,
       })
 
@@ -118,7 +135,6 @@ return {
       })
 
       vim.cmd([[colorscheme dracula]])
-      vim.api.nvim_set_hl(0, "MyBannerColor", { fg = "#50fa7b" })
     end,
   },
 }
