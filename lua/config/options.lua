@@ -18,3 +18,5 @@ vim.o.smartcase = false
 vim.o.ignorecase = false
 
 vim.g.autoformat = false
+
+vim.o.mousescroll = "ver:3,hor:0"

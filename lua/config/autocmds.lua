@@ -48,6 +48,22 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    if vim.bo.filetype == "snacks_dashboard" then
+      vim.o.mousescroll = "ver:0,hor:0"
+    end
+  end,
+})
+vim.api.nvim_create_autocmd("BufLeave", {
+  callback = function()
+    if vim.bo.filetype == "snacks_dashboard" then
+      vim.o.mousescroll = "ver:3,hor:0"
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   pattern = { "*" },
   command = "silent! wall",
