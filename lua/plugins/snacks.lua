@@ -78,6 +78,26 @@ return {
             preset = "sidebar",
             preview = "main",
           },
+          actions = {
+            explorer_focus_cd = function(picker)
+              local dir = picker:dir()
+              require("snacks.explorer.actions").actions.explorer_focus(picker)
+              vim.fn.chdir(dir)
+            end,
+            explorer_up_cd = function(picker)
+              local dir = vim.fs.dirname(picker:cwd())
+              require("snacks.explorer.actions").actions.explorer_up(picker)
+              vim.fn.chdir(dir)
+            end,
+          },
+          win = {
+            list = {
+              keys = {
+                ["."] = "explorer_focus_cd",
+                ["<BS>"] = "explorer_up_cd",
+              },
+            },
+          },
         },
       },
       layout = {
