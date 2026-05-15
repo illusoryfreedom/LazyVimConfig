@@ -136,6 +136,11 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw", { desc = "Delete word ahead in insert 
 vim.keymap.set("n", "q", "<Nop>", { silent = true, desc = "Disable macro recording" })
 vim.keymap.set("n", "Q", "<Nop>", { silent = true, desc = "Disable macro recording (uppercase)" })
 
+-- Find files in current directory only (depth 1)
+vim.keymap.set("n", "<leader>f.", function()
+  Snacks.picker.pick("files_shallow")
+end, { desc = "Find Files (depth 1)" })
+
 --hello
 vim.keymap.set("n", "<leader>sd", function()
   vim.ui.input({ prompt = "Grep in directory: ", completion = "dir" }, function(dir)

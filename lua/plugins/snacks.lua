@@ -73,7 +73,17 @@ return {
     -- 6. Picker Logic
     opts.picker = {
       sources = {
+        files_shallow = {
+          finder = "files",
+          cmd = "fd",
+          args = { "--max-depth", "1", "--type", "f", "--color", "never" },
+        },
         explorer = {
+          transform = function(item)
+            if item.dir and item.file then
+              item.text = vim.fn.fnamemodify(item.file, ":t")
+            end
+          end,
           layout = {
             preset = "sidebar",
             preview = "main",
